@@ -1,0 +1,26 @@
+<section id="experience" class="section">
+  <div class="inner">
+    <p class="label">Where I worked</p>
+    <h2 class="title">Experience</h2>
+    <div class="timeline">
+      <div *ngFor="let exp of experiences; let last = last" class="tl-item">
+        <div class="tl-left">
+          <div class="tl-dot"></div>
+          <div class="tl-line" *ngIf="!last"></div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-meta">
+            <span class="tl-period">{{ exp.period }}</span>
+            <span class="tl-loc"> {{ exp.location }}</span>
+          </div>
+          <h3 class="tl-title">{{ exp.title }}</h3>
+          <p class="tl-company">{{ exp.company }}</p>
+          <p *ngIf="exp.clients" class="tl-clients">{{ exp.clients }}</p>
+          <ul class="tl-points">
+            <li *ngFor="let pt of exp.points">{{ pt }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

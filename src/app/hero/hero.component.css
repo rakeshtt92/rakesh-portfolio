@@ -1,0 +1,255 @@
+.hero {
+    padding: 3.5rem 2rem 2.5rem;
+    border-bottom: 1px solid #1e1e1e;
+}
+
+.hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.available-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0d2b0d;
+    color: #4ade80;
+    font-size: 12px;
+    padding: 5px 14px;
+    border-radius: 99px;
+    border: 0.5px solid #2d5a2d;
+    margin-bottom: 1.2rem;
+}
+
+.badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4ade80;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: .4
+    }
+}
+
+.hero-heading {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 700;
+    line-height: 1.25;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.accent {
+    color: #4ade80;
+}
+
+.hero-sub {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    max-width: 520px;
+}
+
+.hero-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #4ade80;
+    margin-bottom: 1.5rem;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #4ade80;
+    color: #052e16;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background .2s;
+}
+
+.btn-primary:hover {
+    background: #86efac;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #4ade80;
+    border: 1px solid #4ade80;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.btn-outline:hover {
+    background: #0d2b0d;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #888;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.btn-ghost:hover {
+    color: #fff;
+    border-color: #555;
+}
+
+.social-row {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #1a1a1a;
+    border: 0.5px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    text-decoration: none;
+    transition: color .2s, border-color .2s;
+}
+
+.social-icon:hover {
+    color: #4ade80;
+    border-color: #4ade80;
+}
+
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 160px;
+    height: 160px;
+}
+
+.avatar-initials {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: #1a2a1a;
+    border: 2px solid #4ade80;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    font-weight: 700;
+    color: #4ade80;
+}
+
+.avatar-ring {
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 1px dashed #2d5a2d;
+    animation: spin 12s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+}
+
+.stat-item {
+    background: #111;
+    border: 0.5px solid #222;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stat-val {
+    font-size: 20px;
+    font-weight: 700;
+    color: #4ade80;
+}
+
+.stat-lbl {
+    font-size: 10px;
+    color: #555;
+}
+
+.avatar-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid #4ade80;
+  display: block;
+}
+
+@media (max-width: 768px) {
+    .hero-inner {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .quick-stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

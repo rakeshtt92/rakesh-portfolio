@@ -1,0 +1,30 @@
+<section id="projects" class="section">
+  <div class="inner">
+    <p class="label">What I built</p>
+    <h2 class="title">Projects</h2>
+    <div class="grid">
+      <div *ngFor="let p of projects" class="card" [class.highlight]="p.highlight">
+        <div class="card-head">
+          <div class="card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div class="card-links">
+            <a *ngIf="p.githubUrl" [href]="p.githubUrl" target="_blank" class="icon-link">GH</a>
+            <a *ngIf="p.liveUrl"   [href]="p.liveUrl"   target="_blank" class="icon-link">↗</a>
+          </div>
+        </div>
+        <h3 class="card-title">{{ p.title }}</h3>
+        <p  class="card-desc">{{ p.description }}</p>
+        <div class="tags">
+          <span *ngFor="let t of p.tags" class="tag">{{ t }}</span>
+        </div>
+        <div class="card-footer">
+          <a *ngIf="p.liveUrl"   [href]="p.liveUrl"   target="_blank" class="btn-live">Live Demo &rarr;</a>
+          <a *ngIf="p.githubUrl" [href]="p.githubUrl" target="_blank" class="btn-gh">View Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

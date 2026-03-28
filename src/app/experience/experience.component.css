@@ -1,0 +1,137 @@
+.section {
+    padding: 3rem 2rem;
+    border-bottom: 1px solid #1e1e1e;
+}
+
+.inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #4ade80;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: .4rem;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.tl-item {
+    display: flex;
+    gap: 16px;
+}
+
+.tl-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18px;
+    flex-shrink: 0;
+}
+
+.tl-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #4ade80;
+    flex-shrink: 0;
+    border: 2px solid #0d2b0d;
+    margin-top: 4px;
+}
+
+.tl-line {
+    flex: 1;
+    width: 1px;
+    background: #222;
+    margin: 4px 0;
+    min-height: 20px;
+}
+
+.tl-card {
+    flex: 1;
+    background: #111;
+    border: 0.5px solid #222;
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 14px;
+    transition: border-color .2s;
+}
+
+.tl-card:hover {
+    border-color: #2d5a2d;
+}
+
+.tl-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.tl-period {
+    font-size: 11px;
+    color: #4ade80;
+    font-weight: 600;
+}
+
+.tl-loc {
+    font-size: 11px;
+    color: #555;
+}
+
+.tl-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px;
+}
+
+.tl-company {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.tl-clients {
+    font-size: 11px;
+    color: #4ade80;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.tl-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tl-points li {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.6;
+    padding-left: 14px;
+    position: relative;
+}
+
+.tl-points li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #4ade80;
+    font-size: 11px;
+}
