@@ -1,26 +1,33 @@
 <section id="experience" class="section">
   <div class="inner">
-    <p class="label">Where I worked</p>
-    <h2 class="title">Experience</h2>
+    <p class="label">{{ ls.t.expLabel }}</p>
+    <h2 class="title">{{ ls.t.expTitle }}</h2>
     <div class="timeline">
-      <div *ngFor="let exp of experiences; let last = last" class="tl-item">
+      <div *ngFor="let exp of experiences; let i = index; let last = last" class="tl-item">
         <div class="tl-left">
           <div class="tl-dot"></div>
           <div class="tl-line" *ngIf="!last"></div>
         </div>
-        <div class="tl-card">
+        <div class="tl-card" scrollAnimate [animDelay]="(i * 0.1) + 's'">
           <div class="tl-meta">
             <span class="tl-period">{{ exp.period }}</span>
-            <span class="tl-loc"> {{ exp.location }}</span>
+            <span class="tl-loc">{{ exp.location }}</span>
           </div>
-          <h3 class="tl-title">{{ exp.title }}</h3>
+          <h3 class="tl-title">
+            {{ ls.currentLang() === 'en' ? exp.title : exp.titleSv }}
+          </h3>
           <p class="tl-company">{{ exp.company }}</p>
           <p *ngIf="exp.clients" class="tl-clients">{{ exp.clients }}</p>
           <ul class="tl-points">
-            <li *ngFor="let pt of exp.points">{{ pt }}</li>
+            <li *ngFor="let pt of (ls.currentLang() === 'en' ? exp.points : exp.pointsSv)">
+              {{ pt }}
+            </li>
           </ul>
         </div>
       </div>
     </div>
+    <app-github-graph username="rakeshtt92"></app-github-graph>
   </div>
+
+
 </section>

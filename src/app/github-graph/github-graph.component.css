@@ -1,0 +1,86 @@
+.github-section {
+  background: #111;
+  border: 0.5px solid #222;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  transition: border-color .2s;
+}
+
+.github-section:hover {
+  border-color: #2d5a2d;
+}
+
+.github-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.github-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4ade80;
+}
+
+.github-icon {
+  color: #4ade80;
+  flex-shrink: 0;
+}
+
+.github-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4ade80;
+}
+
+.github-link {
+  font-size: 12px;
+  color: #555;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.github-link:hover {
+  color: #4ade80;
+}
+
+.graph-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.contrib-graph {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  opacity: 0.85;
+  transition: opacity .2s;
+}
+
+.contrib-graph:hover {
+  opacity: 1;
+}
+
+.graph-error {
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .github-section {
+    padding: 1rem;
+  }
+
+  .contrib-graph {
+    min-width: 600px;
+  }
+
+  .graph-wrapper {
+    overflow-x: scroll;
+  }
+}

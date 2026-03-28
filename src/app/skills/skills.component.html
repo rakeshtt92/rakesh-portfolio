@@ -1,14 +1,47 @@
 <section id="skills" class="section">
   <div class="inner">
-    <p class="label">What I know</p>
-    <h2 class="title">Technical Skills</h2>
-    <div class="grid">
-      <div *ngFor="let cat of categories" class="card">
-        <div class="card-title">{{ cat.title }}</div>
-        <div class="tags">
-          <span *ngFor="let s of cat.skills" class="tag">{{ s }}</span>
+    <p class="label" scrollAnimate animDelay="0s">{{ ls.t.skillsLabel }}</p>
+    <h2 class="title" scrollAnimate animDelay="0.1s">{{ ls.t.skillsTitle }}</h2>
+
+    <div class="skills-layout">
+
+      <!-- LEFT — Progress bars -->
+      <div class="progress-side" scrollAnimate animDelay="0.2s">
+        <h3 class="side-title">
+          {{ ls.currentLang() === 'en' ? 'Proficiency' : 'Kompetensnivå' }}
+        </h3>
+        <div class="progress-list">
+          <div *ngFor="let skill of keySkills; let i = index" class="progress-item">
+            <div class="progress-meta">
+              <span class="progress-name">{{ skill.name }}</span>
+              <span class="progress-pct">{{ skill.level }}%</span>
+            </div>
+            <div class="progress-track">
+              <div
+                #progressBar
+                class="progress-fill"
+                [attr.data-level]="skill.level"
+                [style.transition-delay]="(i * 0.1) + 's'">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- RIGHT — Skill tag categories -->
+      <div class="tags-side">
+        <div
+          *ngFor="let cat of categories; let i = index"
+          class="skill-card"
+          scrollAnimate
+          [animDelay]="(0.1 * i) + 's'">
+          <div class="card-title">{{ cat.title }}</div>
+          <div class="tags">
+            <span *ngFor="let s of cat.skills" class="tag">{{ s }}</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

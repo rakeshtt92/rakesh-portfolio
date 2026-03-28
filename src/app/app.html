@@ -1,1 +1,52 @@
+<!-- Loading screen -->
+<app-loading *ngIf="isLoading" (loaded)="onLoaded()"></app-loading>
 
+<div class="portfolio-root" [class.hidden]="isLoading">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <div class="nav-avatar">
+          <img src="assets/RakeshTT.jpg" alt="Rakesh TT" class="nav-avatar-img"
+               onerror="this.style.display='none';this.parentElement.innerHTML='RT'"/>
+        </div>
+        <span class="nav-name">RakeshTT</span>
+      </div>
+
+      <div class="nav-links">
+        <a (click)="scrollTo('skills')">{{ ls.t.skillsTitle }}</a>
+        <a (click)="scrollTo('projects')">{{ ls.t.projTitle }}</a>
+        <a (click)="scrollTo('experience')">{{ ls.t.expTitle }}</a>
+        <a (click)="scrollTo('contact')">{{ ls.t.contactTitle }}</a>
+      </div>
+
+      <div class="nav-right">
+        <app-lang-switcher></app-lang-switcher>
+        <a [href]="cvUrl" download class="nav-cv-btn">{{ ls.t.downloadCv }}</a>
+        <button class="hamburger" [class.open]="menuOpen" (click)="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" [class.open]="menuOpen">
+      <a (click)="scrollTo('skills')">{{ ls.t.skillsTitle }}</a>
+      <a (click)="scrollTo('projects')">{{ ls.t.projTitle }}</a>
+      <a (click)="scrollTo('experience')">{{ ls.t.expTitle }}</a>
+      <a (click)="scrollTo('contact')">{{ ls.t.contactTitle }}</a>
+      <a [href]="cvUrl" download>{{ ls.t.downloadCv }}</a>
+    </div>
+  </nav>
+
+  <app-hero></app-hero>
+  <app-skills></app-skills>
+  <app-projects></app-projects>
+  <app-experience></app-experience>
+  <app-contact></app-contact>
+  <app-footer></app-footer>
+
+  <app-back-to-top></app-back-to-top>
+
+</div>

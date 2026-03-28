@@ -1,0 +1,9 @@
+<div class="loader-wrap" [class.fade-out]="hiding">
+    <div class="loader-inner">
+        <div class="loader-logo">RT</div>
+        <div class="loader-bar-track">
+            <div class="loader-bar" [style.width]="progress + '%'"></div>
+        </div>
+        <p class="loader-text">{{ loadingText }}</p>
+    </div>
+</div>

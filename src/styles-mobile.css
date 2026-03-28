@@ -1,0 +1,240 @@
+/* ═══════════════════════════════════════════════
+   GLOBAL MOBILE-FRIENDLY STYLES
+   Add these to your src/styles.css
+═══════════════════════════════════════════════ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0d0d0d;
+  color: #ffffff;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── NAVBAR MOBILE ── */
+@media (max-width: 768px) {
+  .nav-inner {
+    padding: 0 1rem !important;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .nav-name {
+    font-size: 13px !important;
+  }
+
+  .nav-cv-btn {
+    padding: 5px 10px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* ── HERO MOBILE ── */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem 2rem !important;
+  }
+
+  .hero-inner {
+    flex-direction: column-reverse !important;
+    gap: 1.5rem !important;
+  }
+
+  .hero-heading {
+    font-size: 24px !important;
+  }
+
+  .hero-sub {
+    font-size: 13px !important;
+  }
+
+  .avatar-wrapper {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .avatar-img {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .avatar-initials {
+    width: 120px !important;
+    height: 120px !important;
+    font-size: 32px !important;
+  }
+
+  .quick-stats {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .stat-val {
+    font-size: 16px !important;
+  }
+
+  .hero-btns {
+    flex-direction: column !important;
+  }
+
+  .btn-primary,
+  .btn-outline,
+  .btn-ghost {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .tech-icons {
+    display: none !important;
+  }
+}
+
+/* ── SECTIONS MOBILE ── */
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem !important;
+  }
+
+  .inner {
+    padding: 0 !important;
+  }
+}
+
+/* ── SKILLS MOBILE ── */
+@media (max-width: 768px) {
+  .skills-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .tags-side {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── PROJECTS MOBILE ── */
+@media (max-width: 768px) {
+
+  .proj-grid,
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── EXPERIENCE MOBILE ── */
+@media (max-width: 768px) {
+  .tl-card {
+    padding: 1rem !important;
+  }
+
+  .tl-meta {
+    flex-direction: column !important;
+    gap: 2px !important;
+  }
+
+  .tl-title {
+    font-size: 13px !important;
+  }
+}
+
+/* ── CONTACT MOBILE ── */
+@media (max-width: 768px) {
+  .contact-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-box {
+    padding: 1.2rem !important;
+  }
+}
+
+/* ── FOOTER MOBILE ── */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem 1rem !important;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+}
+
+/* ── HAMBURGER MENU (mobile navbar) ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #888;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #111;
+  border-bottom: 1px solid #1e1e1e;
+  padding: 1rem;
+  gap: 12px;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu a {
+  font-size: 14px;
+  color: #888;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 8px 0;
+  border-bottom: 0.5px solid #1a1a1a;
+  transition: color .2s;
+}
+
+.mobile-menu a:hover {
+  color: #4ade80;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}

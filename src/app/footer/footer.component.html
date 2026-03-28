@@ -1,0 +1,78 @@
+<footer class="footer">
+  <div class="footer-inner">
+
+    <!-- TOP ROW -->
+    <div class="footer-top">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <div class="brand-logo">RT</div>
+        <div class="brand-text">
+          <span class="brand-name">Rakesh TT</span>
+          <span class="brand-title">
+            {{ ls.currentLang() === 'en' ? 'Senior Frontend Developer' : 'Senior frontendutvecklare' }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">
+          {{ ls.currentLang() === 'en' ? 'Quick Links' : 'Snabblänkar' }}
+        </h4>
+        <ul class="footer-links">
+          <li *ngFor="let link of quickLinks">
+            <a (click)="scrollTo(link.id)">
+              {{ ls.currentLang() === 'en' ? link.label : link.labelSv }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">
+          {{ ls.currentLang() === 'en' ? 'Get In Touch' : 'Kom i kontakt' }}
+        </h4>
+        <div class="footer-contact">
+          <button class="footer-email-btn" (click)="openEmail()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            {{ ls.currentLang() === 'en' ? 'Send Email' : 'Skicka mejl' }}
+          </button>
+          <a [href]="cvUrl" download class="footer-cv-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            {{ ls.t.downloadCv }}
+          </a>
+        </div>
+        <div class="footer-socials">
+          <a [href]="linkedin" target="_blank" class="footer-social">in</a>
+          <a [href]="github" target="_blank" class="footer-social">gh</a>
+          <a href="https://rakeshtt.dev" target="_blank" class="footer-social">&#127760;</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="footer-divider"></div>
+
+    <!-- BOTTOM ROW -->
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        &copy; {{ year }} Rakesh TT
+      </p>
+      <button class="scroll-top-btn" (click)="scrollTop()"
+        [title]="ls.currentLang() === 'en' ? 'Back to top' : 'Till toppen'">
+        &#8593;
+      </button>
+    </div>
+
+  </div>
+</footer>

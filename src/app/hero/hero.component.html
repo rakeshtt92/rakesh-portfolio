@@ -1,81 +1,120 @@
 <section class="hero">
+
+  <!-- Particle canvas background -->
+  <canvas #particleCanvas class="particle-canvas"></canvas>
+
+  <!-- Floating tech icons -->
+  <div class="tech-icons">
+    <div *ngFor="let icon of techIcons" class="tech-icon" [style.top]="icon.top" [style.left]="icon.left"
+      [style.animation-delay]="icon.delay" [style.font-size]="icon.size" [title]="icon.name">
+      {{ icon.symbol }}
+    </div>
+  </div>
+
   <div class="hero-inner">
+
+    <!-- LEFT -->
     <div class="hero-left">
+
       <!-- <div class="available-badge">
         <span class="badge-dot"></span>
-        Available for work 
-        &mdash; 
-        Gothenburg, Sweden
+        {{ ls.t.available }}
       </div> -->
+
       <h1 class="hero-heading">
-        Hey! I'm <span class="accent">Rakesh TT</span><br>
-        Senior Frontend Developer
+        {{ ls.t.greeting }} <span class="accent">Rakesh TT</span>
       </h1>
-      <p class="hero-sub">
-        Senior Frontend Developer with 7+ years of experience designing and
-        building scalable enterprise web applications for global clients
-        including GE Healthcare, GE Vernova, Honeywell and Epicor. Proven
-        expertise in Angular (2–20), React, TypeScript, Javascript, RxJS, NgRx and WebSockets,
-        with hands-on experience in performance optimisation, reusable
-        component architecture and modern CI/CD pipelines using Docker,
-        GitHub Actions and AWS. Comfortable working across the full frontend
-        stack and collaborating closely with backend teams to deliver
-        high-quality, user-focused solutions. Passionate about clean code,
-        scalable architecture and continuous learning.
+
+      <!-- Typing animation -->
+      <p class="typing-row">
+        <span class="typed-text">{{ typedText }}</span><span class="cursor" [class.hidden]="!showCursor">|</span>
       </p>
-      <div class="hero-location">
-        <!-- <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-          <circle cx="12" cy="9" r="2.5"/>
-        </svg> -->
-        <!-- Myntgatan 10A, Gothenburg, Sweden -->
+
+      <!-- Sub text — fully translated -->
+      <p class="hero-sub">
+        {{ ls.t.sub1 }}
+        <span class="highlight">GE Healthcare</span>,
+        <span class="highlight">GE Vernova</span>,
+        <span class="highlight">Honeywell</span>
+        {{ ls.currentLang() === 'en' ? 'and' : 'och' }}
+        <span class="highlight">Epicor</span>.
+        {{ ls.t.sub2 }}
+      </p>
+
+      <!-- Tech badges -->
+      <div class="hero-tech-badges">
+        <span class="tech-badge">Angular</span>
+        <span class="tech-badge">React</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">TypeScript</span>
+        <span class="tech-badge">RxJS</span>
+        <span class="tech-badge">NgRx</span>
+        <span class="tech-badge">Docker</span>
+        <span class="tech-badge">AWS</span>
+        <span class="tech-badge">Node.js</span>
       </div>
+
+      <!-- Buttons -->
       <div class="hero-btns">
         <a [href]="cvUrl" download class="btn-primary">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
-          Download CV
+          {{ ls.t.downloadCv }}
         </a>
-        <button class="btn-outline" (click)="scrollTo('projects')">View Projects</button>
-        <button class="btn-ghost"   (click)="scrollTo('contact')">Contact Me</button>
+        <button class="btn-outline" (click)="scrollTo('projects')">{{ ls.t.viewProjects }}</button>
+        <button class="btn-ghost" (click)="scrollTo('contact')">{{ ls.t.contactMe }}</button>
       </div>
+
+      <!-- Social icons -->
       <div class="social-row">
         <a [href]="linkedinUrl" target="_blank" class="social-icon">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
-            <circle cx="4" cy="4" r="2"/>
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+            <circle cx="4" cy="4" r="2" />
           </svg>
         </a>
         <a [href]="githubUrl" target="_blank" class="social-icon">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
           </svg>
         </a>
-        <a [href]="'mailto:' + email" class="social-icon">
+        <a [href]="'mailto:' + email" class="social-icon" (click)="openEmail()">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
           </svg>
         </a>
       </div>
+
     </div>
+
+    <!-- RIGHT -->
     <div class="hero-right">
       <div class="avatar-wrapper">
-        <div class="avatar-initials">  <img src="assets/RakeshTT.jpg" alt="Rakesh TT" class="avatar-img" />
-
-        </div>
-        <div class="avatar-ring">
-        </div>
+        <img src="assets/RakeshTT.jpg" alt="Rakesh TT" class="avatar-img"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+        <img src="assets/RakeshTT.jpg" alt="Rakesh TT" class="avatar-initials-img" style="display:none" />
+        <div class="avatar-ring"></div>
       </div>
       <div class="quick-stats">
-        <div *ngFor="let s of stats" class="stat-item">
-          <span class="stat-val">{{ s.value }}</span>
-          <span class="stat-lbl">{{ s.label }}</span>
+        <div class="stat-item">
+          <span class="stat-val" counterAnim [targetValue]="7" [suffix]="'+'" [duration]="1500">7+</span>
+          <span class="stat-lbl">{{ ls.t.yearsExp }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val" counterAnim [targetValue]="15" [suffix]="'+'" [duration]="1800">15+</span>
+          <span class="stat-lbl">{{ ls.t.projects }}</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-val" counterAnim [targetValue]="5" [suffix]="'+'" [duration]="1200">5+</span>
+          <span class="stat-lbl">{{ ls.t.clients }}</span>
         </div>
       </div>
     </div>
+
   </div>
 </section>
