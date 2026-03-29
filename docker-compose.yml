@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+
+  # ── Angular Portfolio Frontend ─────────────────
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - api
+    networks:
+      - portfolio-network
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge
