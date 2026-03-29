@@ -49,8 +49,8 @@ export class BackToTopComponent implements OnInit, OnDestroy {
     this.isVisible = window.scrollY > 400;
   }
 
-  ngOnInit(): void {}
-  ngOnDestroy(): void {}
+  ngOnInit(): void { }
+  ngOnDestroy(): void { }
 
   scrollTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });

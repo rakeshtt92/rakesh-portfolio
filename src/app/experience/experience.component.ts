@@ -7,7 +7,7 @@ import { GithubGraphComponent } from '../github-graph/github-graph.component';
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [CommonModule, ScrollAnimateDirective,GithubGraphComponent],
+  imports: [CommonModule, ScrollAnimateDirective, GithubGraphComponent],
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css']
 })
