@@ -15,7 +15,7 @@ export class ExperienceComponent {
   ls = inject(LanguageService);
 
   experiences = [
-    {
+    { 
       title: 'Lead Digital Engineer (Senior Frontend Developer)',
       titleSv: 'Lead Digital Engineer (Senior Frontendutvecklare)',
       company: 'Sonata Software',
