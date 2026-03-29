@@ -11,6 +11,7 @@ import { BackToTopComponent }    from './backtotop/back-to-top.component';
 import { LangSwitcherComponent } from './language/lang-switcher.component';
 import { SeoService }            from './seo/seo.service';
 import { LanguageService }       from './language/language.service';
+import { ThemeToggleComponent } from './shared/theme-toggle.component';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +27,7 @@ import { LanguageService }       from './language/language.service';
     LoadingComponent,
     BackToTopComponent,
     LangSwitcherComponent,
+    ThemeToggleComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

@@ -1,7 +1,345 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: #0d0d0d;
   color: #ffffff;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
-html { scroll-behavior: smooth; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── DARK MODE (default) ── */
+[data-theme="dark"] {
+  --bg: #0d0d0d;
+  --bg-card: #111111;
+  --bg-nav: #111111;
+  --text: #ffffff;
+  --text-sub: #888888;
+  --border: #222222;
+  --accent: #4ade80;
+  --accent-bg: #0d2b0d;
+}
+
+/* ══════════════════════════════════════
+   LIGHT MODE — FULL PAGE OVERRIDES
+══════════════════════════════════════ */
+
+[data-theme="light"] body,
+[data-theme="light"] .portfolio-root {
+  background: #f8f9fa !important;
+  color: #1a1a1a !important;
+}
+
+/* ── NAVBAR ── */
+[data-theme="light"] .navbar {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+[data-theme="light"] .nav-links a {
+  color: #555 !important;
+}
+
+[data-theme="light"] .nav-links a:hover {
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .nav-name {
+  color: #1a1a1a !important;
+}
+
+[data-theme="light"] .mobile-menu {
+  background: #ffffff !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] .mobile-menu a {
+  color: #555 !important;
+}
+
+/* ── HERO ── */
+[data-theme="light"] .hero {
+  background: #f8fffe !important;
+}
+
+[data-theme="light"] .hero-heading {
+  color: #1a1a1a !important;
+}
+
+[data-theme="light"] .hero-sub {
+  color: #555 !important;
+}
+
+[data-theme="light"] .hero-location {
+  color: #16a34a !important;
+}
+
+/* ── SKILLS ── */
+[data-theme="light"] .section {
+  background: #f8f9fa !important;
+}
+
+[data-theme="light"] .skill-card {
+  background: #ffffff !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] .card-title {
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .tag {
+  background: #f0fdf4 !important;
+  color: #166534 !important;
+  border-color: #bbf7d0 !important;
+}
+
+[data-theme="light"] .progress-side {
+  background: #ffffff !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] .side-title {
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .progress-name {
+  color: #1a1a1a !important;
+}
+
+[data-theme="light"] .progress-pct {
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .progress-track {
+  background: #e5e7eb !important;
+}
+
+/* ── PROJECTS ── */
+[data-theme="light"] .proj-card {
+  background: #ffffff !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] .proj-card.highlight {
+  background: #f0fdf4 !important;
+  border-color: #bbf7d0 !important;
+}
+
+[data-theme="light"] .proj-title {
+  color: #1a1a1a !important;
+}
+
+[data-theme="light"] .proj-desc {
+  color: #555 !important;
+}
+
+[data-theme="light"] .proj-tag {
+  background: #f3f4f6 !important;
+  color: #555 !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] .proj-card.highlight .proj-tag {
+  background: #f0fdf4 !important;
+  color: #166534 !important;
+  border-color: #bbf7d0 !important;
+}
+
+[data-theme="light"] .proj-icon-link {
+  background: #f3f4f6 !important;
+  border-color: #e0e0e0 !important;
+  color: #555 !important;
+}
+
+[data-theme="light"] .btn-gh {
+  color: #555 !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] .proj-screenshot {
+  background: #e8f5e9 !important;
+}
+
+[data-theme="light"] .screenshot-placeholder {
+  color: #16a34a !important;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7) !important;
+}
+
+/* ── GITHUB GRAPH ── */
+[data-theme="light"] .github-section {
+  background: #ffffff !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] .github-title {
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .github-link {
+  color: #555 !important;
+}
+
+/* ── EXPERIENCE ── */
+[data-theme="light"] .tl-card {
+  background: #ffffff !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] .tl-title {
+  color: #1a1a1a !important;
+}
+
+[data-theme="light"] .tl-company {
+  color: #555 !important;
+}
+
+[data-theme="light"] .tl-period {
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .tl-loc {
+  color: #888 !important;
+}
+
+[data-theme="light"] .tl-clients {
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .tl-points li {
+  color: #555 !important;
+}
+
+[data-theme="light"] .tl-points li::before {
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .tl-dot {
+  background: #16a34a !important;
+}
+
+[data-theme="light"] .tl-line {
+  background: #e0e0e0 !important;
+}
+
+/* ── CONTACT ── */
+[data-theme="light"] .contact-box {
+  background: #f0fdf4 !important;
+  border-color: #bbf7d0 !important;
+}
+
+[data-theme="light"] .contact-heading {
+  color: #1a1a1a !important;
+}
+
+[data-theme="light"] .contact-sub {
+  color: #555 !important;
+}
+
+[data-theme="light"] .contact-card {
+  background: #ffffff !important;
+  border-color: #e0e0e0 !important;
+}
+
+[data-theme="light"] .cc-label {
+  color: #888 !important;
+}
+
+[data-theme="light"] .cc-value {
+  color: #1a1a1a !important;
+}
+
+[data-theme="light"] .cc-icon {
+  background: #f0fdf4 !important;
+  color: #16a34a !important;
+}
+
+/* ── FOOTER ── */
+[data-theme="light"] .footer {
+  background: #f1f5f9 !important;
+  border-top: 1px solid #e0e0e0 !important;
+}
+
+[data-theme="light"] .footer-inner {
+  color: #1a1a1a !important;
+}
+
+[data-theme="light"] .brand-name {
+  color: #1a1a1a !important;
+}
+
+[data-theme="light"] .brand-title {
+  color: #555 !important;
+}
+
+[data-theme="light"] .brand-logo {
+  background: #f0fdf4 !important;
+  border-color: #bbf7d0 !important;
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .footer-col-title {
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .footer-links a {
+  color: #555 !important;
+}
+
+[data-theme="light"] .footer-links a:hover {
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .footer-email-btn {
+  background: #f0fdf4 !important;
+  border-color: #bbf7d0 !important;
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .footer-social {
+  background: #ffffff !important;
+  border-color: #e0e0e0 !important;
+  color: #555 !important;
+}
+
+[data-theme="light"] .footer-copy {
+  color: #888 !important;
+}
+
+[data-theme="light"] .footer-location {
+  color: #888 !important;
+}
+
+[data-theme="light"] .scroll-top-btn {
+  background: #ffffff !important;
+  border-color: #e0e0e0 !important;
+  color: #555 !important;
+}
+
+[data-theme="light"] .tech-tag {
+  background: #f3f4f6 !important;
+  color: #555 !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* ── BACK TO TOP ── */
+[data-theme="light"] .back-to-top {
+  background: #f0fdf4 !important;
+  border-color: #bbf7d0 !important;
+  color: #16a34a !important;
+}
+
+/* ── LABELS AND TITLES ── */
+[data-theme="light"] .label {
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .title {
+  color: #1a1a1a !important;
+}

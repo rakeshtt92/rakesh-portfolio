@@ -23,6 +23,7 @@
 
       <div class="nav-right">
         <app-lang-switcher></app-lang-switcher>
+          <app-theme-toggle></app-theme-toggle>  
         <a [href]="cvUrl" download class="nav-cv-btn">{{ ls.t.downloadCv }}</a>
         <button class="hamburger" [class.open]="menuOpen" (click)="toggleMenu()">
           <span></span><span></span><span></span>
