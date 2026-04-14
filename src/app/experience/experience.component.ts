@@ -19,7 +19,7 @@ export class ExperienceComponent {
       title: 'Lead Digital Engineer (Senior Frontend Developer)',
       titleSv: 'Lead Digital Engineer (Senior Frontendutvecklare)',
       company: 'Sonata Software',
-      location: 'Bengaluru, Indien',
+      location: 'Bengaluru, India',
       period: 'Jan 2025 – Jun 2025',
       clients: 'Kund: Epicor | Projekt: Bistrack',
       points: [
@@ -39,7 +39,7 @@ export class ExperienceComponent {
       title: 'Associate Consultant (Senior Frontend Developer)',
       titleSv: 'Associate Consultant (Senior Frontendutvecklare)',
       company: 'Capgemini',
-      location: 'Bengaluru, Indien',
+      location: 'Bengaluru, India',
       period: 'Jul 2021 – Dec 2024',
       clients: 'Kunder: Honeywell, GE Vernova, GE Renewables, GE Healthcare',
       points: [
@@ -59,7 +59,7 @@ export class ExperienceComponent {
       title: 'Associate Consultant (Frontend — Angular / JavaScript)',
       titleSv: 'Associate Consultant (Frontend — Angular / JavaScript)',
       company: 'Mobijini',
-      location: 'Bengaluru, Indien',
+      location: 'Bengaluru, India',
       period: 'Sep 2018 – Mar 2021',
       clients: 'Projekt: Orderjini, One2One',
       points: [
@@ -77,7 +77,7 @@ export class ExperienceComponent {
       title: 'Software Engineer (Frontend)',
       titleSv: 'Mjukvaruingenjör (Frontend)',
       company: 'DigitalIT360',
-      location: 'Bengaluru, Indien',
+      location: 'Bengaluru, India',
       period: 'Oct 2017 – Jul 2018',
       clients: '',
       points: [
