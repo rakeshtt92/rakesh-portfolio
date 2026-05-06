@@ -38,7 +38,7 @@ export class App implements OnInit {
 
   isLoading = true;
   menuOpen  = false;
-  cvUrl     = '/assets/Rakesha_TT_Frontend_Developer.docx';
+  cvUrl     = '/assets/Rakesha_TT_Fe_dev.pdf';
 
   ngOnInit(): void {
     this.seo.setPortfolioMeta();

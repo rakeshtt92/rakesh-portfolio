@@ -18,7 +18,7 @@ export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
   linkedinUrl = 'https://linkedin.com/in/rakesh-tt';
   githubUrl = 'https://github.com/rakeshtt92';
   email = 'rakeshyasht92@gmail.com';
-  cvUrl = '/assets/Rakesha_TT_Frontend_Developer.docx';
+  cvUrl = '/assets/Rakesha_TT_Fe_dev.pdf';
 
   typedText = '';
   showCursor = true;

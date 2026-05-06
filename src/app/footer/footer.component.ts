@@ -16,7 +16,7 @@ export class FooterComponent implements OnInit {
   email = 'rakeshyasht92@gmail.com';
   linkedin = 'https://linkedin.com/in/rakesh-tt';
   github = 'https://github.com/rakeshtt92';
-  cvUrl = '/assets/Rakesha_TT_Frontend_Developer.docx';
+  cvUrl = '/assets/Rakesha_TT_Fe_dev.pdf';
 
   quickLinks = [
     { label: 'Skills', labelSv: 'Färdigheter', id: 'skills' },
